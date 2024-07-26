@@ -3,13 +3,31 @@
 //require('./js-foundation/02-destructuring');
 // const {getUserById} = require('./js-foundation/03-callbacks');
 // const {getUserById} = require('./js-foundation/04-arrow');
+// const getPokemonById = require('./js-foundation/06-promises');
+const {buildLogger} = require('./plugins');
 
-const getPokemonById = require('./js-foundation/06-promises');
+const logger = buildLogger('app.js');
 
-getPokemonById(1019)
+logger.log('Hola mundo');
+logger.error('Error de prueba');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*getPokemonById(3)
     .then((pokemon) => console.log({pokemon}))
     .catch((error) => console.log({error}))
-    .finally( () => console.log('Finalmente'));
+    .finally( () => console.log('Finalmente'));*/
 
 
 
