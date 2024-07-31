@@ -1,8 +1,9 @@
-const axios = require('axios');
+import axios from 'axios';
+
 
 // wrapper, patron adaptador
-const httpClientPlugin = {
-    get: async (url) => {
+export const httpClientPlugin = {
+    get: async (url: string) => {
         const {data} = await axios.get(url);
         return data;
         
@@ -10,9 +11,9 @@ const httpClientPlugin = {
         //return await resp.json();
         ;
     },
-    post: async(url, body) => {},
-    put: async(url, body) => {},
-    delete: async(url) => {},
+    post: async(url : string, body : any) => {},
+    put: async(url : string, body : any) => {},
+    delete: async(url : string) => {},
 };
 
 
