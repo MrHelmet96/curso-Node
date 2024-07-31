@@ -1,3 +1,4 @@
+import { getPokemonNameById } from "./js-foundation/06-promises";
 import { buildLogger } from "./plugins/logger.plugins";
 
 //const {getAge, getUUId} = require('./plugins')
@@ -17,17 +18,10 @@ logger.error('Error de prueba');
 
 
 
+getPokemonNameById(3).then()
 
 
-
-
-
-
-
-
-
-/*getPokemonById(3)
-    .then((pokemon) => console.log({pokemon}))
+    /*.then((pokemon) => console.log({pokemon}))
     .catch((error) => console.log({error}))
     .finally( () => console.log('Finalmente'));*/
 
