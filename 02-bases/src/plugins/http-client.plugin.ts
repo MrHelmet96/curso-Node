@@ -16,8 +16,3 @@ export const httpClientPlugin = {
     delete: async(url : string) => {},
 };
 
-
-
-module.exports = {
-    http: httpClientPlugin,
-};
