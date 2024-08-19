@@ -1,22 +1,13 @@
-import fs from 'fs';
+import {yarg} from "./config/plugins/args.plugin";
 
+//console.log(process.argv);
+//console.log(yarg.b);
 
-let outputsMessage = '';
-const base = 5;
-const headerMessage = `====================================\n          Tabla del ${base}\n====================================\n`;
+(async () => {
+    await main();
+    console.log('fin del programa');
+})();
 
-    for (let i = 1; i <= 10; i++) {
-        outputsMessage += `${base} x ${i} = ${base*i}\n`;
-    }
-
-outputsMessage = headerMessage + outputsMessage;
-
-const outputPath = `outputs`;
-
-//en consola
-console.log(outputsMessage);
-
-//en archivo
-fs.mkdirSync(outputPath, { recursive: true });
-fs.writeFileSync(`${outputPath}/tabla-${base}.txt`, outputsMessage);
-console.log("file created");
+async function main() {
+    console.log('Main ejecutado');
+}
