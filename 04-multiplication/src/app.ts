@@ -1,13 +1,13 @@
 import {yarg} from "./config/plugins/args.plugin";
-
-//console.log(process.argv);
-//console.log(yarg.b);
+import { ServerApp } from "./presentation/server-app";
 
 (async () => {
     await main();
-    console.log('fin del programa');
+    
 })();
 
 async function main() {
-    console.log('Main ejecutado');
+    const { b:base, l:limit, s:displayTable } = yarg;
+
+    ServerApp.run({ base, limit, displayTable });
 }
