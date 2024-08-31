@@ -11,6 +11,13 @@ const runCommand = async (args: string[]) => {
 
 describe('Test in args.plugin.ts', () => {
 
+    const originalArgv = process.argv;
+    
+    beforeEach(() => {
+        process.argv = originalArgv;
+        jest.resetModules();
+    });
+
     test ('should return default values', async() => {
         
         const argv = await runCommand(['-b', '5']);
@@ -23,6 +30,19 @@ describe('Test in args.plugin.ts', () => {
             n: 'multiplication-table',
             d: 'outputs',
         }));
+    });
+
+    test ('should return configuration with custom values', async() => {
+            
+        const argv = await runCommand(['-b', '5', '-l', '15', '-s', '-n', 'test-name', '-d', 'test-dir']);
+
+        expect(argv).toEqual(expect.objectContaining({
+            b: 5,
+            l: 15,
+            s: true,
+            n: 'test-name',
+            d: 'test-dir',
+            }));
     });
 
 });
